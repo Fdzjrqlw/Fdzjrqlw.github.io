@@ -5,19 +5,19 @@
   
 
   
-  <title>hello | Hexo</title>
+  <title>Codeforces Round 490 (Div. 3) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="$a_i$">
+  <meta name="description" content="比赛链接:http://codeforces.com/contest/999 比赛回顾现场共解5/6题,  rating +136  A. Mishka and Contest分别从首尾扫描即可 B. Reversing Encryption反着做,按照约束从小到大,依次反转$s[1…d]$ C. Alphabetic Removals题意要求按照字符顺序去掉$k$个字符.可以事先计算出每类字符去">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello">
+<meta property="og:title" content="Codeforces Round 490 (Div. 3)">
 <meta property="og:url" content="http://yoursite.com/2018/06/22/hello/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="$a_i$">
+<meta property="og:description" content="比赛链接:http://codeforces.com/contest/999 比赛回顾现场共解5/6题,  rating +136  A. Mishka and Contest分别从首尾扫描即可 B. Reversing Encryption反着做,按照约束从小到大,依次反转$s[1…d]$ C. Alphabetic Removals题意要求按照字符顺序去掉$k$个字符.可以事先计算出每类字符去">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-22T14:58:16.000Z">
+<meta property="og:updated_time" content="2018-06-22T16:02:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello">
-<meta name="twitter:description" content="$a_i$">
+<meta name="twitter:title" content="Codeforces Round 490 (Div. 3)">
+<meta name="twitter:description" content="比赛链接:http://codeforces.com/contest/999 比赛回顾现场共解5/6题,  rating +136  A. Mishka and Contest分别从首尾扫描即可 B. Reversing Encryption反着做,按照约束从小到大,依次反转$s[1…d]$ C. Alphabetic Removals题意要求按照字符顺序去掉$k$个字符.可以事先计算出每类字符去">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hello
+      Codeforces Round 490 (Div. 3)
     </h1>
   
 
@@ -86,12 +86,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>$a_i$</p>
+        <p>比赛链接:<a href="http://codeforces.com/contest/999" target="_blank" rel="noopener">http://codeforces.com/contest/999</a></p>
+<h2 id="比赛回顾"><a href="#比赛回顾" class="headerlink" title="比赛回顾"></a>比赛回顾</h2><p>现场共解5/6题, <font color="red"> rating +136 <font></font></font></p>
+<h2 id="A-Mishka-and-Contest"><a href="#A-Mishka-and-Contest" class="headerlink" title="A. Mishka and Contest"></a>A. Mishka and Contest</h2><p>分别从首尾扫描即可</p>
+<h2 id="B-Reversing-Encryption"><a href="#B-Reversing-Encryption" class="headerlink" title="B. Reversing Encryption"></a>B. Reversing Encryption</h2><p>反着做,按照约束从小到大,依次反转$s[1…d]$</p>
+<h2 id="C-Alphabetic-Removals"><a href="#C-Alphabetic-Removals" class="headerlink" title="C. Alphabetic Removals"></a>C. Alphabetic Removals</h2><p>题意要求按照字符顺序去掉$k$个字符.可以事先计算出每类字符去掉的次数,按照题意模拟即可.</p>
+<h2 id="D-Equalize-the-Remainders"><a href="#D-Equalize-the-Remainders" class="headerlink" title="D. Equalize the Remainders"></a>D. Equalize the Remainders</h2><p>我们很容易可以观察到,对于$a_I$对应的余数$r_i$,如果$r_i$出现的次数多于$\frac{n}{m}$,那么考虑增加$a_i$的值.<br>那么究竟增加多少呢？一个直接的想法就是增加$a_i$到$b_i$且对应的余数$r’_i$的出现次数$\frac{n}{m}$.<br>为了使得次数最小,我们需要确定的就是满足$r’_i &gt; r_i$这样的$r’_i$.<br>为此我们可以考虑使用平衡树来解决.在实际实现过程中,可以使用STL中的set来解决.</p>
+<h2 id="E-Reachability-from-the-Capita"><a href="#E-Reachability-from-the-Capita" class="headerlink" title="E. Reachability from the Capita"></a>E. Reachability from the Capita</h2><p>题意是给定$n$个点,$m$条边的有向图和起点$s$,要求添加最少的边,使得从$s$到每个点都存在一条路.<br>模板题.可以先用tarjan算法缩点,然后对于得到的新图$G’$.如果顶点$u$的入度为0且在原图中不包含起点$s$,那么要添加一条边.<br>最后答案为统计满足条件点的个数即可.</p>
+<h2 id="F-Cards-and-Joy"><a href="#F-Cards-and-Joy" class="headerlink" title="F. Cards and Joy"></a>F. Cards and Joy</h2><p>问题保证了每个人恰好拿到$k$张牌,所以我们只需要对每一类牌的分法进行考虑即可.<br>对于牌$c$,我们统计对应的人个数$n_c$和牌的个数$m_c$.<br>我们用$dp[i][j]$来表示$j$张牌分给前$i$个人可得到最大的价.<br>那么可以推出状态转移方程:</p>
+<script type="math/tex; mode=display">dp[i][j]=max(dp[i][j] , dp[i - 1][k - l] + h[l])</script><p>其中$0 \leq l \leq min(k , j)$<br>最后我们对于所有可能的$c$,统计答案$dp[n_c][m_c]$即可.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjiq3ooxw0000ofmn4ntq3r6k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjiq62ruw0001u7mnleyiz8qa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +148,7 @@
       <ul>
         
           <li>
-            <a href="/2018/06/22/hello/">hello</a>
+            <a href="/2018/06/22/hello/">Codeforces Round 490 (Div. 3)</a>
           </li>
         
           <li>
