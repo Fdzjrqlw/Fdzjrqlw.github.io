@@ -62,6 +62,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第三次比赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/28/第三次比赛/" class="article-date">
+  <time datetime="2018-06-28T14:32:51.000Z" itemprop="datePublished">2018-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/28/第三次比赛/">Codeforces Round 491 (Div. 2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-Hit-the-Lottery"><a href="#A-Hit-the-Lottery" class="headerlink" title="A. Hit the Lottery"></a>A. Hit the Lottery</h2><p>题意:用最少的1,5,10,20,100组成$n$.从最大的面值开始依次计算.</p>
+<h2 id="B-World-Cup"><a href="#B-World-Cup" class="headerlink" title="B. World Cup"></a>B. World Cup</h2><p>题意:给出$n$个数的数列$a_i$构成环.每个时刻,$a_i$减少1,人移动一个单位.问最后人停在哪?<br>考虑人若停在$i$门需要的时间$(i - 1) + k * n$. 其中, $k$满足:</p>
+<script type="math/tex; mode=display">k=\begin{cases}
+0,\quad a[i] - i + 1 <= 0\\
+\llcorner a[i] - i + 1 / n \lrcorner, \quad a[i] - i + 1 > 0
+\end{cases}</script><h2 id="C-Tesla"><a href="#C-Tesla" class="headerlink" title="C. Tesla"></a>C. Tesla</h2><p>首先将所有一步到位的车先停入车库.如果剩下的车仍有$2k$辆,则说明问题无解,输出-1.<br>否则考虑将第二行和第三行连成个环,逆时针移动.每顺时针移动一次,判断是否有车可以一步入库.<br>最后的复杂度为$O(n^2)$.</p>
+<h2 id="D-Suit-and-Tie"><a href="#D-Suit-and-Tie" class="headerlink" title="D. Suit and Tie"></a>D. Suit and Tie</h2><p>一个明显的贪心策略是将$a_1$对应的另一个数移到第二个位置.之后再考虑剩下$n-1$对的情形.<br>这样做正确的原因在于:考虑任意两对,共有以下三种情况.</p>
+<ol>
+<li>$aabb$    我们的贪心策略使得$a,b$不交换.</li>
+<li>$abab$    $a,b$至少交换一次.我们的贪心策略使得$a,b$交换一次.</li>
+<li>$abba$    $a,b$至少交换两次.我们的贪心策略使得$a,b$交换两次.<br>因此这样的贪心策略所得的结果是最优的.</li>
+</ol>
+<h2 id="E-Leaving-the-Bar"><a href="#E-Leaving-the-Bar" class="headerlink" title="E. Leaving the Bar"></a>E. Leaving the Bar</h2><p>这题有两种解法.<br>第一种解法可以考虑多次随机化向量序列,依次加入向量判断模长是否会超过限制.<br>第二种解法,对于任意的三个向量$v_1,v_2,v_3$.我们可以证明$v_1 + v_2 , v_1 - v_2 , v_1 + v_3 , v_1 - v_3 , v_2 + v_3 , v_2 - v_3$这6个向量至少有一个模长是小于$r$的.因此,用一个二叉树来记录新的向量是有哪两个向量通过运算得到的.最后对于得到的二叉树,自根出发,更新所有叶子节点的对应的符号即可.时间复杂度$O(N)$.同时解法二说明了答案一定存在.</p>
+<h2 id="F-Game"><a href="#F-Game" class="headerlink" title="F. Game"></a>F. Game</h2><p>考虑公式</p>
+<script type="math/tex; mode=display">\frac{\sum_{i=0}^{2^n - 1}{f(i)}}{2^n}</script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjiysnqba0000jgmns3k5ggyr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第二次比赛" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/24/第二次比赛/" class="article-date">
@@ -76,7 +126,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/24/第二次比赛/">Codeforces Round 491 (Div.2)</a>
+      <a class="article-title" href="/2018/06/24/第二次比赛/">Codeforces Round 491 (Div. 2)</a>
     </h1>
   
 
@@ -107,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjiuc09wn0001yxmnjxsycs5a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjiysnqbd0001jgmn7j8iee8j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjiuc09wh0000yxmn6x9ma09v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjiysnqbf0002jgmno1wepmyj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +243,11 @@
       <ul>
         
           <li>
-            <a href="/2018/06/24/第二次比赛/">Codeforces Round 491 (Div.2)</a>
+            <a href="/2018/06/28/第三次比赛/">Codeforces Round 491 (Div. 2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/第二次比赛/">Codeforces Round 491 (Div. 2)</a>
           </li>
         
           <li>
