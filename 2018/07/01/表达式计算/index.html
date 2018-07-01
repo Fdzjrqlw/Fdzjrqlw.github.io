@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>表达式计算 | 姜妍二胖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="表达式的分类算术表达式通常有前缀、中缀和后缀三种表示方法.  中缀表达式.我们最熟悉的表达式,如:$2 * (3+2)$. 前缀表达式.又称波兰式,形如:$op$ $A$ $B$.其中$op$是运算符,$A$,$B$是另外两个前缀表达式.如:$ * \space 2 \space + \space 3 \space 2$ 后缀表达式.又称逆波兰式.形如:$A$ $B$ $op$.如:$\space">
+<meta name="keywords" content="栈的应用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="表达式计算">
+<meta property="og:url" content="http://yoursite.com/2018/07/01/表达式计算/index.html">
+<meta property="og:site_name" content="姜妍二胖">
+<meta property="og:description" content="表达式的分类算术表达式通常有前缀、中缀和后缀三种表示方法.  中缀表达式.我们最熟悉的表达式,如:$2 * (3+2)$. 前缀表达式.又称波兰式,形如:$op$ $A$ $B$.其中$op$是运算符,$A$,$B$是另外两个前缀表达式.如:$ * \space 2 \space + \space 3 \space 2$ 后缀表达式.又称逆波兰式.形如:$A$ $B$ $op$.如:$\space">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-01T08:55:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="表达式计算">
+<meta name="twitter:description" content="表达式的分类算术表达式通常有前缀、中缀和后缀三种表示方法.  中缀表达式.我们最熟悉的表达式,如:$2 * (3+2)$. 前缀表达式.又称波兰式,形如:$op$ $A$ $B$.其中$op$是运算符,$A$,$B$是另外两个前缀表达式.如:$ * \space 2 \space + \space 3 \space 2$ 后缀表达式.又称逆波兰式.形如:$A$ $B$ $op$.如:$\space">
+  
+    <link rel="alternate" href="/atom.xml" title="姜妍二胖" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">姜妍二胖</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-表达式计算" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/表达式计算/" class="article-date">
+  <time datetime="2018-07-01T07:27:43.000Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      表达式计算
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="表达式的分类"><a href="#表达式的分类" class="headerlink" title="表达式的分类"></a>表达式的分类</h3><p>算术表达式通常有前缀、中缀和后缀三种表示方法.</p>
+<ol>
+<li>中缀表达式.我们最熟悉的表达式,如:$2 * (3+2)$.</li>
+<li>前缀表达式.又称波兰式,形如:$op$ $A$ $B$.其中$op$是运算符,$A$,$B$是另外两个前缀表达式.如:$ * \space 2 \space + \space 3 \space 2$</li>
+<li>后缀表达式.又称逆波兰式.形如:$A$ $B$ $op$.如:$\space 2 \space 3 \space 2\space +\space * \space$</li>
+</ol>
+<p>注意,一个中缀表达式确定的后缀表达式和前缀表达式并不惟一.当给定表达式的时候,前缀和后缀表达式的运算方案是确定的,不会产生歧义.</p>
+<h3 id="后缀表达式的计算"><a href="#后缀表达式的计算" class="headerlink" title="后缀表达式的计算"></a>后缀表达式的计算</h3><p>根据后缀表达式的形式,我们可以考虑先递归求出$A \space B$的值,然后再做$op$运算得到计算结果.</p>
+<ol>
+<li>建立一个栈,用来存储数字.依次扫描后缀表达式中的元素.<br> (1) 如果遇到数,则把该数入栈.<br> (2) 如果遇到运算符,则取出栈顶的两个数字进行运算,并把所得的结果入栈.</li>
+<li>扫描完成后,栈中剩下的一个数,就是后缀表达式的结果.</li>
+</ol>
+<p><a href="https://github.com/Fdzjrqlw/CodeForcesTraining/blob/master/stack/后缀表达式求值.cpp" target="_blank" rel="noopener">代码</a></p>
+<h2 id="中缀表达式转后缀表达式"><a href="#中缀表达式转后缀表达式" class="headerlink" title="中缀表达式转后缀表达式"></a>中缀表达式转后缀表达式</h2><p>中缀表达式是我们生活中经常使用的方法,但是计算机无法直接计算中缀表达式.因此,我们先将中缀表达式转换成后缀表达式,然后再用上面的方法来计算.</p>
+<ol>
+<li>建立一个栈,用来存储运算符.依次扫描后缀表达式中的元素.<br> (1) 如果遇到数,则直接输出.<br> (2) 如果遇到左括号,则将左括号直接入栈.<br> (3) 如果遇到右括号,不断取出栈顶运算符出栈并且输出,直到栈顶元素为左括号.然后把左括号出栈.<br> (4) 如果遇到运算符,只要栈顶元素的优先级$\ge$新符号,就不断取出栈顶运算符并且输出.最后把新符号入栈.符号的优先级:乘除$&gt;$加减$&gt;$左括号.</li>
+<li>扫描完成后,将栈中剩下的符号直接输出.最后输出序列就是与原来表达式等价的后缀表达式.</li>
+</ol>
+<p><a href="https://github.com/Fdzjrqlw/CodeForcesTraining/blob/master/stack/中缀转后缀.cpp" target="_blank" rel="noopener">代码</a></p>
+<h2 id="POJ-1686"><a href="#POJ-1686" class="headerlink" title="POJ 1686"></a>POJ 1686</h2><p>题意:判断两个中缀表达式是否相同.其中表达式表达式由数字,字母,左右括号以及运算符组成.<br>对于字母,我们考虑用其ASCII码的值代替,当成只有数字的表达式进行计算.<br>方法是先将表达式转为后缀表达式,然后对得到的后缀表达式进行计算.<br>时间复杂度$O(N)$.</p>
+<p><a href="https://github.com/Fdzjrqlw/POJ/blob/master/1686.cpp" target="_blank" rel="noopener">代码</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjj2lpdjj0001zomnjhdzjbnh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/28/第三次比赛/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Codeforces Round 492 (Div. 2)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/栈的应用/" style="font-size: 10px;">栈的应用</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/01/表达式计算/">表达式计算</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/第三次比赛/">Codeforces Round 492 (Div. 2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/第二次比赛/">Codeforces Round 491 (Div. 2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/22/hello/">Codeforces Round 490 (Div. 3)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 姜妍二胖<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
