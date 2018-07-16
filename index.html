@@ -62,6 +62,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第四次比赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/13/第四次比赛/" class="article-date">
+  <time datetime="2018-07-13T09:29:32.000Z" itemprop="datePublished">2018-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/13/第四次比赛/">Codeforces Round 496 (Div. 3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-Tanya-and-Stairways"><a href="#A-Tanya-and-Stairways" class="headerlink" title="A. Tanya and Stairways"></a>A. Tanya and Stairways</h2><p>模拟题.按照1来分割序列,取每个序列最大的一个作为答案存储即可.</p>
+<h2 id="B-Delete-from-the-Left"><a href="#B-Delete-from-the-Left" class="headerlink" title="B. Delete from the Left"></a>B. Delete from the Left</h2><p>从右侧匹配最长的相等子串,设长度为$l$,那么最后的答案就是$l_1 + l_2 - 2l$.</p>
+<h2 id="C-Summarize-to-the-Power-of-Two"><a href="#C-Summarize-to-the-Power-of-Two" class="headerlink" title="C. Summarize to the Power of Two"></a>C. Summarize to the Power of Two</h2><p>注意到对于任意的$a_i$,只要存在$j,j \neq i$且$a_j + a_i = 2^k$,就不会被删除.<br>因此,我们对于每个$a_i$,枚举$2^k$,计算是否有这样的$a_j$即可.对于$a_i=2^t$的情形要特殊考虑.</p>
+<h2 id="D-Polycarp-and-Div-3"><a href="#D-Polycarp-and-Div-3" class="headerlink" title="D. Polycarp and Div 3"></a>D. Polycarp and Div 3</h2><p>题意是将一个字符串分成若干个数,不允许有前导零,要求这样的数最多.<br>设$dp[i]$表示前i个字符可以分成的最大数字,那么转移方程很显然为$dp[i]=max(dp[j] + c(j,i))$.<br>其中,$c(j,i)=1$表示$s[j+1 …i]$可以被3整除,否则$c(j,i)=0$.<br>这样直接转移的时间复杂度为$O(N^2)$.<br>但是事实上,我们知道,被3整除的余数最多有3种可能,因此我们提前预处理上下面的信息.<br>$sum[i]$表示前$i$个数字和关于3的余数.<br>$pre[i]$表示第i个余数上一个和它相同的下标,那么意味着从$s[pre[i]+1 , i]$肯定能被3整除.<br>事实上,再由$dp[i]$的单调性,$dp[i]=dp[pre[i]]+1$即可.</p>
+<h2 id="E1-Median-on-Segments-Permutations-Edition-amp-E2-Median-on-Segments-General-Case-Edition"><a href="#E1-Median-on-Segments-Permutations-Edition-amp-E2-Median-on-Segments-General-Case-Edition" class="headerlink" title="E1. Median on Segments (Permutations Edition) &amp; E2. Median on Segments (General Case Edition)"></a>E1. Median on Segments (Permutations Edition) &amp; E2. Median on Segments (General Case Edition)</h2><p>直接考虑一般性问题.<br>如何刻画中位数呢？对于固定的$m$,我们将$a_i$变形.如果$a_i \ge m$,则$b_i = 1$,否则$b_i = -1$.那么,对于区间$[l,r]$,如果$b_l + \cdots + b_r &gt; 0$,则表明中位数$\ge m$,否则中位数$&lt; m$.<br>因此我们将统计中位数转换成统计区间和是否严格大于0.<br>考虑前缀和$S_i=b_1+ \cdots + b_i$.那么$b_l + \cdots + b_r &gt; 0$等价于$S_{r} &gt; S_{l-1}$.<br>因此当我们枚举区间右断点,得到$S_{r}$,只需要在$[0,r-1]$中寻找有多少个$i$,$S_i &lt; S_{r}$.<br>运用树状数组或者线段树,我们可以在$O(NlogN)$的时间内完成这样的统计和更新工作.<br>事实上,由于这题的特殊性,$b_i = -1$或$1$,因此$S$每次$+1$或$-1$.<br>我们考虑用$cnt$表示当前$&lt; S$的$S_i$有多少.维护$cnt$即可.用$c[S]$存储有多少个$i$使得$S_i = S$.<br>当$S+1$时,我们先维护$cnt += c[S]$,然后更新答案$ans += cnt$.最后维护$S++ , c[S]++$即可.<br>当$S-1$时,我们先维护$S— , cnt -= c[S]$,然后更新答案$ans += cnt$.最后维护$c[S]++$.</p>
+<h2 id="F-Berland-and-the-Shortest-Paths"><a href="#F-Berland-and-the-Shortest-Paths" class="headerlink" title="F. Berland and the Shortest Paths"></a>F. Berland and the Shortest Paths</h2><p>给出一个边权均为1的无向连通图,设$d_i$表示起点1到点$s$的最短距离.要求选出$n-1$条边,使得图仍保持连通,且$d_1 + d_2 + … + d_n$最小.<br>由于图的边权均为1,因此我们可以使用BFS求得最短路径.之后统计出每个节点的前驱边,即$(u,v)$,使得$d_u + 1 = d_v$.<br>最后枚举每个顶点前驱边的取法即可.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/13/第四次比赛/" data-id="cjjnm9shx0000bimno3skm4tg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-表达式计算" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/01/表达式计算/" class="article-date">
@@ -109,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjj2lpdjj0001zomnjhdzjbnh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjjnm9si50004bimn1rocyeju" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
@@ -161,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjj2lpdjl0002zomn6sxgtgz6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjjnm9si40003bimn37dzhlox" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjj2lpdjp0004zomnu5xq3mbm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjjnm9si00001bimn0xrmtmf9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjj2lpdjf0000zomnxg22aiuy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjjnm9si20002bimnw7jo7xij" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,6 +356,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/07/13/第四次比赛/">Codeforces Round 496 (Div. 3)</a>
+          </li>
         
           <li>
             <a href="/2018/07/01/表达式计算/">表达式计算</a>
