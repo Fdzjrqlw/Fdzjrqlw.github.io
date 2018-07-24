@@ -7,17 +7,17 @@
   
   <title>Codeforces Round 498 (Div. 3) | 姜妍二胖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A. Adjacent Replacements">
+  <meta name="description" content="A. Adjacent Replacements给定$n$个数,执行以下操作:将这些中的1用2替换,然后2用1替换,3用4替换,4用3替换$\cdots$输出最后的数列.事实上,对于$a_i$分奇偶讨论即可.对于奇数$a_i$,必然先变成下一个偶数再变回自己本身.对于偶数,则减1. B. Polycarp’s Practice给定$n$个数,要求分成连续的$k$段,其中每一段定义的价值$v=max">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round 498 (Div. 3)">
 <meta property="og:url" content="http://yoursite.com/2018/07/22/第五次比赛/index.html">
 <meta property="og:site_name" content="姜妍二胖">
-<meta property="og:description" content="A. Adjacent Replacements">
+<meta property="og:description" content="A. Adjacent Replacements给定$n$个数,执行以下操作:将这些中的1用2替换,然后2用1替换,3用4替换,4用3替换$\cdots$输出最后的数列.事实上,对于$a_i$分奇偶讨论即可.对于奇数$a_i$,必然先变成下一个偶数再变回自己本身.对于偶数,则减1. B. Polycarp’s Practice给定$n$个数,要求分成连续的$k$段,其中每一段定义的价值$v=max">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-22T13:33:43.000Z">
+<meta property="og:updated_time" content="2018-07-22T14:16:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Round 498 (Div. 3)">
-<meta name="twitter:description" content="A. Adjacent Replacements">
+<meta name="twitter:description" content="A. Adjacent Replacements给定$n$个数,执行以下操作:将这些中的1用2替换,然后2用1替换,3用4替换,4用3替换$\cdots$输出最后的数列.事实上,对于$a_i$分奇偶讨论即可.对于奇数$a_i$,必然先变成下一个偶数再变回自己本身.对于偶数,则减1. B. Polycarp’s Practice给定$n$个数,要求分成连续的$k$段,其中每一段定义的价值$v=max">
   
     <link rel="alternate" href="/atom.xml" title="姜妍二胖" type="application/atom+xml">
   
@@ -86,11 +86,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="A-Adjacent-Replacements"><a href="#A-Adjacent-Replacements" class="headerlink" title="A. Adjacent Replacements"></a>A. Adjacent Replacements</h2>
+        <h2 id="A-Adjacent-Replacements"><a href="#A-Adjacent-Replacements" class="headerlink" title="A. Adjacent Replacements"></a>A. Adjacent Replacements</h2><p>给定$n$个数,执行以下操作:将这些中的1用2替换,然后2用1替换,3用4替换,4用3替换$\cdots$输出最后的数列.<br>事实上,对于$a_i$分奇偶讨论即可.对于奇数$a_i$,必然先变成下一个偶数再变回自己本身.对于偶数,则减1.</p>
+<h2 id="B-Polycarp’s-Practice"><a href="#B-Polycarp’s-Practice" class="headerlink" title="B. Polycarp’s Practice"></a>B. Polycarp’s Practice</h2><p>给定$n$个数,要求分成连续的$k$段,其中每一段定义的价值$v=max(a_i,…,a_j)$.求出分法,使得$k$段的价值之和最大.<br>事实上,排序之后,前$k$个数之和就是最大的价值之和.之后简单构造即可.</p>
+<h2 id="C-Three-Parts-of-the-Array"><a href="#C-Three-Parts-of-the-Array" class="headerlink" title="C. Three Parts of the Array"></a>C. Three Parts of the Array</h2><p>将正数数组分成三部分,使得第一部分和第三部分的和相同且和最大.<br>由于数字均为正数,因此具有单调性,考虑两个指针向中间计算.设$s_l,s_r$分别表示$d_1+\cdots+d_l$,$d_r+\cdots+d_n$.<br>如果$s_l \le s_r$,考虑$l+1$,否则$r-1$.扫描停止的条件是$l&gt;=r$.<br>注意边界的取值和判断.</p>
+<h2 id="D-Two-Strings-Swaps"><a href="#D-Two-Strings-Swaps" class="headerlink" title="D. Two Strings Swaps"></a>D. Two Strings Swaps</h2><p>给定字符串$a$和$b$和以下3种操作:</p>
+<ol>
+<li>交换$a_i$和$b_i$.</li>
+<li>交换$a_i$和$a_{n-i+1}$.</li>
+<li>交换$b_i$和$b_{n-i+1}$.<br>仅有以上的三个操作是无法使$a$串变成$b$串的,因此引入了预操作:可以将$a_i$变为给定字符,但是这个字符无法通过操作1交换到$b$串中去.<br>求出最少的预操作.</li>
+</ol>
+<p>事实上,我们仅需要讨论$a_i,a_{n-i+1},b_i,b_{n-i+1}$这四个字符的关系即可.注意到经过预操作的字符是无法到达$b$串这一特殊要求即可.</p>
+<h2 id="E-Military-Problem"><a href="#E-Military-Problem" class="headerlink" title="E. Military Problem"></a>E. Military Problem</h2><p>给定一个访问顺序,要求输出以第$i$个节点为根的子树的第$k$个节点的编号.<br>事实上,得到Dfs序列后,第$i$个节点为根的子树对应的区间为$[L_i,R_i]$,那么第$k$个节点编号为$seq[L_i+k-1]$.</p>
+<h2 id="F-Xor-Paths"><a href="#F-Xor-Paths" class="headerlink" title="F. Xor-Paths"></a>F. Xor-Paths</h2><p>给出一个$n \times m$的矩阵$a_{i,j}$,求出$(1,1)-&gt;(n,m)$满足$a_{1,1} \land a_{i_1,j_1} \land \cdots \land a_{n,m} = k$的路径个数.<br>折半搜索(Meet in the Middle)的模板题.<br>先计算出$(1,1)-&gt;(x,y)$其中$x+y=(n+m+1)/2$的路径,用map保存.接着再反向计算$(n,m)-&gt;(x,y)$的路径.然后运用乘法原理相乘即可.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/22/第五次比赛/" data-id="cjjwvvel000037omnlh9ya3s8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/22/第五次比赛/" data-id="cjjzet4p7000450mn1hddej3c" class="article-share-link">Share</a>
       
       
     </footer>
