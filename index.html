@@ -62,6 +62,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第五次比赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/22/第五次比赛/" class="article-date">
+  <time datetime="2018-07-22T13:32:42.000Z" itemprop="datePublished">2018-07-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/22/第五次比赛/">Codeforces Round 498 (Div. 3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-Adjacent-Replacements"><a href="#A-Adjacent-Replacements" class="headerlink" title="A. Adjacent Replacements"></a>A. Adjacent Replacements</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/22/第五次比赛/" data-id="cjjwvvel000037omnlh9ya3s8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-多校Day1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/20/多校Day1/" class="article-date">
+  <time datetime="2018-07-20T01:04:44.000Z" itemprop="datePublished">2018-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/20/多校Day1/">牛客网暑期ACM多校训练营（第一场）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这套题是叉姐出的,被教育的很惨.训练的时候被F题幂次和卡住了,其他人过的题目也没有及时关注、跟题.</p>
+<h2 id="A-Monotonic-Matrix"><a href="#A-Monotonic-Matrix" class="headerlink" title="A. Monotonic Matrix"></a>A. Monotonic Matrix</h2><h2 id="B-Symmetric-Matrix"><a href="#B-Symmetric-Matrix" class="headerlink" title="B. Symmetric Matrix"></a>B. Symmetric Matrix</h2><h2 id="C-Fluorescent-2"><a href="#C-Fluorescent-2" class="headerlink" title="C. Fluorescent 2"></a>C. Fluorescent 2</h2><h2 id="D-Two-Graphs"><a href="#D-Two-Graphs" class="headerlink" title="D. Two Graphs"></a>D. Two Graphs</h2><p>给出图同构的定义,求$G_2$同构于$G_1$的子图个数.由于$n$的个数最多为8,因此我们可以考虑枚举所有的映射,然后记录下对应的子图判重即可.判断的方式可以用二进制存储对应的边.</p>
+<p>一个WA点:long long计算的时候,用到的常数要强制转换.</p>
+<h2 id="E-Removal"><a href="#E-Removal" class="headerlink" title="E. Removal"></a>E. Removal</h2><h2 id="F-Sum-of-Maximum"><a href="#F-Sum-of-Maximum" class="headerlink" title="F. Sum of Maximum"></a>F. Sum of Maximum</h2><h2 id="G-Steiner-Tree"><a href="#G-Steiner-Tree" class="headerlink" title="G. Steiner Tree"></a>G. Steiner Tree</h2><h2 id="H-Longest-Path"><a href="#H-Longest-Path" class="headerlink" title="H. Longest Path"></a>H. Longest Path</h2><h2 id="I-Substring"><a href="#I-Substring" class="headerlink" title="I. Substring"></a>I. Substring</h2><h2 id="J-Different-Integers"><a href="#J-Different-Integers" class="headerlink" title="J. Different Integers"></a>J. Different Integers</h2><p>给出有$n$个数的数列$a_i$和$q$次询问,每次询问是一个二元数组$(l,r)$,要求回答$a_1,\cdots,a_{l-1},a_l,a_r,a_{r+1},\cdots,a_n$中不同数的个数.<br>对于询问$l \ge r$,答案就是$[1,n]$上不同数字的个数.<br>否则,我们考虑将$a_i$复制到$a_{n+i}$,这样就变成在新数列中,询问$[r,l+n]$不同数的个数.<br>事实上,解决区间不同数的个数有莫队(分块)、主席树和树状数组等方法.<br>考场上用的是离线+树状数组.<br>首先对所有询问按照新的$r$值排序.<br>依次扫描数组元素和每个数,事实上,对于每个数,我们只需要用$lst$数组记录它最后一次出现的位置.<br>如对于$x$,如果扫描到$x$的时候,$lst[x]$不为0,那么意味着之前出现过$x$.因此更新$lst[x]$的同时维护前缀和即可.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/20/多校Day1/" data-id="cjjwvvekt00007omnylmtx68d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第四次比赛" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/13/第四次比赛/" class="article-date">
@@ -94,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/13/第四次比赛/" data-id="cjjnm9shx0000bimno3skm4tg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/13/第四次比赛/" data-id="cjjwvvel700067omnca3k3ko4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjjnm9si50004bimn1rocyeju" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjjwvvel400057omngsgivqpj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
@@ -203,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjjnm9si40003bimn37dzhlox" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjjwvvekx00017omnc2s6rdin" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjjnm9si00001bimn0xrmtmf9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjjwvvel100047omnjc0vu2vk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjjnm9si20002bimnw7jo7xij" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjjwvvekz00027omnkgwa4qsh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -358,6 +434,14 @@
       <ul>
         
           <li>
+            <a href="/2018/07/22/第五次比赛/">Codeforces Round 498 (Div. 3)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/20/多校Day1/">牛客网暑期ACM多校训练营（第一场）</a>
+          </li>
+        
+          <li>
             <a href="/2018/07/13/第四次比赛/">Codeforces Round 496 (Div. 3)</a>
           </li>
         
@@ -367,14 +451,6 @@
         
           <li>
             <a href="/2018/06/28/第三次比赛/">Codeforces Round 492 (Div. 2)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/24/第二次比赛/">Codeforces Round 491 (Div. 2)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/22/hello/">Codeforces Round 490 (Div. 3)</a>
           </li>
         
       </ul>
