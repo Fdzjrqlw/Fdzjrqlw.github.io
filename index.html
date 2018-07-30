@@ -62,6 +62,134 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-待做合集" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/待做合集/" class="article-date">
+  <time datetime="2018-08-01T14:44:00.000Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/待做合集/">待做合集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://codeforces.com/contest/1008/problem/D" target="_blank" rel="noopener">Codeforces Round #497 (Div. 2) D. Pave the Parallelepiped</a><br>组合数学,容斥原理</p>
+<p><a href="http://codeforces.com/contest/1004/problem/F" target="_blank" rel="noopener">Codeforces Round #495 (Div. 2) F. Sonya and Bitwise OR</a><br>分治,线段树</p>
+<p><a href="http://codeforces.com/contest/1003/problem/F" target="_blank" rel="noopener">Codeforces Round #494 (Div. 3) F. Abbreviation</a><br>动态规划,哈希表,字符串</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/待做合集/" data-id="cjk8f47di0001ycmn6wuvtgpl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第七次比赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/29/第七次比赛/" class="article-date">
+  <time datetime="2018-07-29T13:48:41.000Z" itemprop="datePublished">2018-07-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/29/第七次比赛/">Codeforces Round 499 (Div. 2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-Stages"><a href="#A-Stages" class="headerlink" title="A. Stages"></a>A. Stages</h2><p>给出$n$个字符,选择其中$k$个,要求排序之后,相邻两个字符的间隔至少为2,最后要求字符的相对$a$的位置之和最小.<br>贪心:直接排序模拟即可.</p>
+<h2 id="B-Planning-The-Expedition"><a href="#B-Planning-The-Expedition" class="headerlink" title="B. Planning The Expedition"></a>B. Planning The Expedition</h2><p>有$n$个宇航员和$m$个食物,每个宇航员每天各自消耗一个食物,对于某个宇航员,他所吃的食物类别必须相同.<br>求宇航员可以坚持的最多天数.<br>由于范围很小,直接暴力枚举天数即可,验证是否满足要求.若范围进一步扩大,可以考虑二分答案求解.</p>
+<h2 id="C-Fly"><a href="#C-Fly" class="headerlink" title="C. Fly"></a>C. Fly</h2><p>飞船从地球飞到火星再返回地球,共经过了$n$个星球.每次起飞和着陆都要消耗一定燃料.求飞船返回所需携带的最少燃料.如果无法返回,则输出$-1$.<br>第一种做法可以考虑二分答案,然后验证携带的燃料是否能够使得飞船完成航行.<br>第二种做法可以考虑逆推,飞船最后返回地球的时候燃料刚好用完,着陆时候所用的燃料为x,则满足方程$m + x = b_1 * x$<br>解得,$x = \frac{m}{b_1 - 1}$.同理,依次做下去,所得到的总质量减掉$m$即为所求.<br>对于无解的情况,显然对应着某个$a_i=1$或者$b_j=1$.</p>
+<h2 id="D-Rocket"><a href="#D-Rocket" class="headerlink" title="D. Rocket"></a>D. Rocket</h2><p>交互题.猜测一个飞船和火星之间的距离$x$,$x$是个正整数.每次询问$y$,表示猜测的距离数值.如果$x &lt; y$,返回$-1$;如果$x = y$,返回$0$;如果$x &gt; y$,返回$1$.<br>如果问题仅仅如此,是一个标准的二分答案的问题.因此出题者规定,询问不一定回答正确答案,有时候会返回$-1 * ans$.但是我们知道回复的规律是以$n$为周期.因此可以先通过询问$n$次$1$,得到周期,然后再进行二分答案即可.</p>
+<h2 id="E-Border"><a href="#E-Border" class="headerlink" title="E. Border"></a>E. Border</h2><p>给出$n$个数和正整数$k$,要求找到所有满足的$l$,使得$\sum_{i=1}^{n} c_i * a_i \equiv l (mod k)$.<br>实际上考虑裴蜀定理,这样的$l$必然是$gcd(a_1 , \cdots , a_n , k)$的倍数.</p>
+<h2 id="F-Mars-rover"><a href="#F-Mars-rover" class="headerlink" title="F. Mars rover"></a>F. Mars rover</h2><p>给出一棵由逻辑关系运算符构成的树.<br>如果树的结点对应的运算是&amp; , $\land$ , $|$的一种,则值是由左孩子和右孩子的值参与运算得到.<br>如果对应的运算是$!$,则该结点只有一个孩子,且值是由孩子的值取反得到.<br>如果对应的运算是”IN”,则该结点是叶子,且值是对应的输入数字$0$或$1$.<br>考虑更改每个叶子结点的输入值,求出根的值.<br>我们先用一个Dfs求出每个结点的值.之后考虑由顶向下的树形动态规划.<br>设$f[i]$表示第$i$个节点的值改变对最后答案产生的影响:$f[i]=1$表示结点$i$的值改变则最终值改变;$f[i]=0$表示结点$i$的值改变最终值不改变.<br>转移的话当且仅当$f[i]=1$才可能向孩子结点转移.<br>以$AND$操作为例.如果$f[i]=1$,考虑$v_1,v_2$分别是左孩子和右孩子的值.<br>如果$v_2 = 0$,则$f[l_i]=0$;否则$f[l_i]=1$.<br>如果$v_1 = 0$,则$f[r_i]=0$;否则$f[r_i]=1$.<br>最后的答案为$res_i = (1 - 2 * f[i]) * val[1]$.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/29/第七次比赛/" data-id="cjk8f47df0000ycmn9a6rayop" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CF/">CF</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第六次比赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/24/第六次比赛/" class="article-date">
+  <time datetime="2018-07-24T10:46:06.000Z" itemprop="datePublished">2018-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/24/第六次比赛/">Educational Codeforces Round 47 (Rated for Div. 2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-Game-Shopping"><a href="#A-Game-Shopping" class="headerlink" title="A. Game Shopping"></a>A. Game Shopping</h2><p>模拟题.依据题意,记录当前可以使用的币值,如果可以购买商品,则购买并且更新答案.</p>
+<h2 id="B-Minimum-Ternary-String"><a href="#B-Minimum-Ternary-String" class="headerlink" title="B. Minimum Ternary String"></a>B. Minimum Ternary String</h2><p>一个字符串共有0,1,2种字符,其中每次可以交换1和相邻的任意字符.求通过若干次交换,可以得到的字典序最小的字符串是多少.<br>贪心法,由于1的特殊性,我们可以把所有的1交换到2的前面.因此,我们可以先找到从左往右第一个2的位置.<br>如果没有2,那么答案必然是若干个0和若干个1的样子.<br>如果有2,那么对于2之前的部分是若干个0和若干个1的样子,2之后的所有1也可以调整到2的前面,但是0无法调整.</p>
+<h2 id="C-Annoying-Present"><a href="#C-Annoying-Present" class="headerlink" title="C. Annoying Present"></a>C. Annoying Present</h2><p>一共$n$个数,初始的时候都是$0$.共有$m$次操作,每次可以选择一个位置$i$,对于所有的数,加上$x+ d * dist(i,j)$.要求$m$次操作之后,数列的算数平均数最大.<br>我们可以发现,$d \ge 0$时,在$i=1$使得增加的和最大.$d &lt; 0$时,在选择$i = (n + 1) / 2$最大.<br>之后就是根据等差数列的性质将和单次更新的和累加到答案中即可.</p>
+<h2 id="D-Relatively-Prime-Graph"><a href="#D-Relatively-Prime-Graph" class="headerlink" title="D. Relatively Prime Graph"></a>D. Relatively Prime Graph</h2><p>构造一个有$n$个点,$m$条边的连通图,使得图的每一条边的顶点的编号互质.<br>暴力构造即可,刚开始的时候先连$(i,i+1)$,使得图连通.</p>
+<h2 id="E-Intercity-Travelling"><a href="#E-Intercity-Travelling" class="headerlink" title="E. Intercity Travelling"></a>E. Intercity Travelling</h2><p>两个城市之间的距离为$n$,给出了$n$个数$a_1,\cdots,a_n$,其中$a_i$表示走距离$i$时候的疲劳值.<br>可以等概率的在任意地方建立休息站.最后求总疲劳值的数学期望.<br>首先,只能$n-1$个地方建立休息站,因此每个不同的方案的概率都是$\frac{1}{2^{n-1}}$.<br>我们只需要计算所有方案的总疲劳值之和.<br>我们考虑一段长为$i$的区间对最后总答案的贡献.<br>这段区间如果在两端,以左端为例,那么它贡献的是$(a_1+ \cdots + a_i) * 2^{n-i-1}$.<br>如果在中间,会有$n-i-1$个出现位置,它的贡献是$(a_1+ \cdots + a_i) * 2^{j-1}*2^{(n-j)-1} = (a_1+ \cdots + a_i)*2^{n-i-2}$.<br>最后只需要预处理前缀和之后,枚举区间的长度进行计算即可.</p>
+<h2 id="F-Dominant-Indices"><a href="#F-Dominant-Indices" class="headerlink" title="F. Dominant Indices"></a>F. Dominant Indices</h2><p>给定一棵树,其中1是根.考虑以结点$x$的子树,定义数组$[d_{x,0} , d_{x,1} , \cdots]$,其中$d_{x,i}$表示子树中深度为$i$的节点个数.<br>要求对于每棵子树,求出最大的$d_{x,k}$.如果$d$值相同,则$k$最小.<br>我们考虑树上的启发式合并算法,先预处理出每个子树的重孩子节点和轻孩子节点.<br>统计答案的时候,先递归解决轻孩子的问题,将轻孩子节点的贡献删除.再递归解决重孩子的问题.将轻孩子的节点的贡献加到当前节点的信息中,统计当前节点的答案.<br>这样子的复杂度为$O(NlogN)$.</p>
+<h2 id="G-Allowed-Letters"><a href="#G-Allowed-Letters" class="headerlink" title="G. Allowed Letters"></a>G. Allowed Letters</h2><p>给定一个只含有$a$到$f$的字符串$s$.每个位置$i$对应着一个字符串$p_i$,表示第$i$个位置只能为$p_i$中的字符.求经过若干次对换后,字典序最小的字符串.<br>我们把每个字符串每个位置当成一个点$s_i$,同时把所有的$2^6$个合法位置字符串当成点.那么一个字符串可以成为合法的字符串当且仅当对应的二分图是完美匹配的。<br>因此,我们从前从小到大枚举第$i$个位置可以放的字符,然后验证剩下的图是否存在二分图完美匹配.<br>由于共有$2*|S|$个点,因此直接求一次匹配会造成超时.这里我们要用到二分图的Hall定理.<br>Hall定理说的是:对于X集合的每个子集,该子集的个数应该不少于它所连接的Y集合中的点的个数.<br>由于X集合中本质不同的点只有6种,因此枚举这6种点的所有组合,计算相连的合法位置的点的个数.这个地方可以用二进制优化,具体细节可以查看代码.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/24/第六次比赛/" data-id="cjk8f47e2000aycmn34rsaqtg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CF/">CF</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第五次比赛" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/22/第五次比赛/" class="article-date">
@@ -100,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/22/第五次比赛/" data-id="cjjzet4p7000450mn1hddej3c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/22/第五次比赛/" data-id="cjk8f47e3000cycmnocdz8zjh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/20/多校Day1/" data-id="cjjzet4p5000250mnlm38jlwe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/20/多校Day1/" data-id="cjk8f47do0003ycmn96n7y7hh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/13/第四次比赛/" data-id="cjjzet4p6000350mnp0suur7h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/13/第四次比赛/" data-id="cjk8f47dv0008ycmn3j3bp0sq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjjzet4p8000650mnoze09j5j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjk8f47dw0009ycmn0xv9k9q9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
@@ -291,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjjzet4p3000150mnrwqpldem" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjk8f47dq0004ycmntg2za28v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -346,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjjzet4p8000550mnjb3u6kj9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjk8f47ds0005ycmng4g5noq4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -391,7 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjjzet4oz000050mnulikjnpg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjk8f47dt0007ycmn48ckjf69" class="article-share-link">Share</a>
       
       
     </footer>
@@ -414,7 +542,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CF/">CF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
     </div>
   </div>
 
@@ -424,7 +552,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/栈的应用/" style="font-size: 10px;">栈的应用</a>
+      <a href="/tags/CF/" style="font-size: 20px;">CF</a> <a href="/tags/栈的应用/" style="font-size: 10px;">栈的应用</a>
     </div>
   </div>
 
@@ -433,7 +561,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
     </div>
   </div>
 
@@ -446,23 +574,23 @@
       <ul>
         
           <li>
+            <a href="/2018/08/01/待做合集/">待做合集</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/29/第七次比赛/">Codeforces Round 499 (Div. 2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/24/第六次比赛/">Educational Codeforces Round 47 (Rated for Div. 2)</a>
+          </li>
+        
+          <li>
             <a href="/2018/07/22/第五次比赛/">Codeforces Round 498 (Div. 3)</a>
           </li>
         
           <li>
             <a href="/2018/07/20/多校Day1/">牛客网暑期ACM多校训练营（第一场）</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/13/第四次比赛/">Codeforces Round 496 (Div. 3)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/01/表达式计算/">表达式计算</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/28/第三次比赛/">Codeforces Round 492 (Div. 2)</a>
           </li>
         
       </ul>

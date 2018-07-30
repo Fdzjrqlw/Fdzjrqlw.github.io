@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Codeforces Round 499 (Div. 2) | 姜妍二胖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A. Stages给出$n$个字符,选择其中$k$个,要求排序之后,相邻两个字符的间隔至少为2,最后要求字符的相对$a$的位置之和最小.贪心:直接排序模拟即可. B. Planning The Expedition有$n$个宇航员和$m$个食物,每个宇航员每天各自消耗一个食物,对于某个宇航员,他所吃的食物类别必须相同.求宇航员可以坚持的最多天数.由于范围很小,直接暴力枚举天数即可,验证是否满足要求">
+<meta name="keywords" content="CF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round 499 (Div. 2)">
+<meta property="og:url" content="http://yoursite.com/2018/07/29/第七次比赛/index.html">
+<meta property="og:site_name" content="姜妍二胖">
+<meta property="og:description" content="A. Stages给出$n$个字符,选择其中$k$个,要求排序之后,相邻两个字符的间隔至少为2,最后要求字符的相对$a$的位置之和最小.贪心:直接排序模拟即可. B. Planning The Expedition有$n$个宇航员和$m$个食物,每个宇航员每天各自消耗一个食物,对于某个宇航员,他所吃的食物类别必须相同.求宇航员可以坚持的最多天数.由于范围很小,直接暴力枚举天数即可,验证是否满足要求">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-30T15:17:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces Round 499 (Div. 2)">
+<meta name="twitter:description" content="A. Stages给出$n$个字符,选择其中$k$个,要求排序之后,相邻两个字符的间隔至少为2,最后要求字符的相对$a$的位置之和最小.贪心:直接排序模拟即可. B. Planning The Expedition有$n$个宇航员和$m$个食物,每个宇航员每天各自消耗一个食物,对于某个宇航员,他所吃的食物类别必须相同.求宇航员可以坚持的最多天数.由于范围很小,直接暴力枚举天数即可,验证是否满足要求">
+  
+    <link rel="alternate" href="/atom.xml" title="姜妍二胖" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">姜妍二胖</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-第七次比赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/29/第七次比赛/" class="article-date">
+  <time datetime="2018-07-29T13:48:41.000Z" itemprop="datePublished">2018-07-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Codeforces Round 499 (Div. 2)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-Stages"><a href="#A-Stages" class="headerlink" title="A. Stages"></a>A. Stages</h2><p>给出$n$个字符,选择其中$k$个,要求排序之后,相邻两个字符的间隔至少为2,最后要求字符的相对$a$的位置之和最小.<br>贪心:直接排序模拟即可.</p>
+<h2 id="B-Planning-The-Expedition"><a href="#B-Planning-The-Expedition" class="headerlink" title="B. Planning The Expedition"></a>B. Planning The Expedition</h2><p>有$n$个宇航员和$m$个食物,每个宇航员每天各自消耗一个食物,对于某个宇航员,他所吃的食物类别必须相同.<br>求宇航员可以坚持的最多天数.<br>由于范围很小,直接暴力枚举天数即可,验证是否满足要求.若范围进一步扩大,可以考虑二分答案求解.</p>
+<h2 id="C-Fly"><a href="#C-Fly" class="headerlink" title="C. Fly"></a>C. Fly</h2><p>飞船从地球飞到火星再返回地球,共经过了$n$个星球.每次起飞和着陆都要消耗一定燃料.求飞船返回所需携带的最少燃料.如果无法返回,则输出$-1$.<br>第一种做法可以考虑二分答案,然后验证携带的燃料是否能够使得飞船完成航行.<br>第二种做法可以考虑逆推,飞船最后返回地球的时候燃料刚好用完,着陆时候所用的燃料为x,则满足方程$m + x = b_1 * x$<br>解得,$x = \frac{m}{b_1 - 1}$.同理,依次做下去,所得到的总质量减掉$m$即为所求.<br>对于无解的情况,显然对应着某个$a_i=1$或者$b_j=1$.</p>
+<h2 id="D-Rocket"><a href="#D-Rocket" class="headerlink" title="D. Rocket"></a>D. Rocket</h2><p>交互题.猜测一个飞船和火星之间的距离$x$,$x$是个正整数.每次询问$y$,表示猜测的距离数值.如果$x &lt; y$,返回$-1$;如果$x = y$,返回$0$;如果$x &gt; y$,返回$1$.<br>如果问题仅仅如此,是一个标准的二分答案的问题.因此出题者规定,询问不一定回答正确答案,有时候会返回$-1 * ans$.但是我们知道回复的规律是以$n$为周期.因此可以先通过询问$n$次$1$,得到周期,然后再进行二分答案即可.</p>
+<h2 id="E-Border"><a href="#E-Border" class="headerlink" title="E. Border"></a>E. Border</h2><p>给出$n$个数和正整数$k$,要求找到所有满足的$l$,使得$\sum_{i=1}^{n} c_i * a_i \equiv l (mod k)$.<br>实际上考虑裴蜀定理,这样的$l$必然是$gcd(a_1 , \cdots , a_n , k)$的倍数.</p>
+<h2 id="F-Mars-rover"><a href="#F-Mars-rover" class="headerlink" title="F. Mars rover"></a>F. Mars rover</h2><p>给出一棵由逻辑关系运算符构成的树.<br>如果树的结点对应的运算是&amp; , $\land$ , $|$的一种,则值是由左孩子和右孩子的值参与运算得到.<br>如果对应的运算是$!$,则该结点只有一个孩子,且值是由孩子的值取反得到.<br>如果对应的运算是”IN”,则该结点是叶子,且值是对应的输入数字$0$或$1$.<br>考虑更改每个叶子结点的输入值,求出根的值.<br>我们先用一个Dfs求出每个结点的值.之后考虑由顶向下的树形动态规划.<br>设$f[i]$表示第$i$个节点的值改变对最后答案产生的影响:$f[i]=1$表示结点$i$的值改变则最终值改变;$f[i]=0$表示结点$i$的值改变最终值不改变.<br>转移的话当且仅当$f[i]=1$才可能向孩子结点转移.<br>以$AND$操作为例.如果$f[i]=1$,考虑$v_1,v_2$分别是左孩子和右孩子的值.<br>如果$v_2 = 0$,则$f[l_i]=0$;否则$f[l_i]=1$.<br>如果$v_1 = 0$,则$f[r_i]=0$;否则$f[r_i]=1$.<br>最后的答案为$res_i = (1 - 2 * f[i]) * val[1]$.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/29/第七次比赛/" data-id="cjk8f47df0000ycmn9a6rayop" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CF/">CF</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/01/待做合集/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          待做合集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/24/第六次比赛/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Educational Codeforces Round 47 (Rated for Div. 2)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CF/">CF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CF/" style="font-size: 20px;">CF</a> <a href="/tags/栈的应用/" style="font-size: 10px;">栈的应用</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/01/待做合集/">待做合集</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/29/第七次比赛/">Codeforces Round 499 (Div. 2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/24/第六次比赛/">Educational Codeforces Round 47 (Rated for Div. 2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/22/第五次比赛/">Codeforces Round 498 (Div. 3)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/20/多校Day1/">牛客网暑期ACM多校训练营（第一场）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 姜妍二胖<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
