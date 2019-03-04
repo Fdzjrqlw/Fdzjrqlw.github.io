@@ -91,12 +91,12 @@
 <p>[38. Count and Say]<br>递推模拟,将字符串分解成连续的若干段,统计每段对应的数字和个数$t$,其中$t$可能不止是个位数.</p>
 <p>[39. Combination Sum]<br>简单的Dfs</p>
 <p>[40. Combination Sum II]<br>同39,注意在解的出口加判重</p>
-<p>[41. First Missing Positive]<br>思维好题,有两种解法.<br>解法一:考虑没有额外空间限制的问题.引入辅助数组$A[]$,初始化全为$1$.在扫描数组的时候,将$nums[i]$放入$A[nums[i]-1]$下,最后扫描$A[]$,遇到第一个为$-1$的位置跳出即可.现在考虑原问题,将$num[]$和$A[]$合并,仍然扫描$nums[]$,将$nums[i]$和$nums[nums[i]-1]$交换(注意可能会一直交换下去).<br>解法二:同样考虑没有限制的问题.引入辅助数组$A[]$,初始化全为$1$.不妨设$nums[i]&gt;0$(否则将$le 0$的部分全部放到后面).扫描数组的时候,将$A[nums[i]-1]=-1$.最后扫描$A[]$,碰到第一个为$1$的位置跳出即可.现在考虑原问题,将$nums[]$和$A[]$合并，仍然扫描$nums[]$,当扫描到$nums[i]$时,令$nums[abs(nums[i])-1]$变为负数即可.最后只需要扫描$nums[]$,在第一个不是负数的地方跳出即可.</p>
+<p>[41. First Missing Positive]<br>思维好题,有两种解法.<br>解法一:考虑没有额外空间限制的问题.引入辅助数组$A$,初始化全为$1$.在扫描数组的时候,将$nums[i]$放入$A[nums[i]-1]$下,最后扫描$A$,遇到第一个为$-1$的位置跳出即可.现在考虑原问题,将$nums$和$A$合并,仍然扫描$nums$,将$nums[i]$和$nums[nums[i]-1]$交换(注意可能会一直交换下去).<br>解法二:同样考虑没有限制的问题.引入辅助数组$A$,初始化全为$1$.不妨设$nums[i]&gt;0$(否则将$le 0$的部分全部放到后面).扫描数组的时候,将$A[nums[i]-1]=-1$.最后扫描$A$,碰到第一个为$1$的位置跳出即可.现在考虑原问题,将$nums$和$A$合并,仍然扫描$nums$,当扫描到$nums[i]$时,令$nums[abs(nums[i])-1]$变为负数即可.最后只需要扫描$nums$,在第一个不是负数的地方跳出即可.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/leetcode泛做合集/" data-id="cjstt1kn00000gfmnpvnw0avo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/leetcode泛做合集/" data-id="cjstt518j0001hmmnr2m3bquq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/29/第七次比赛/" data-id="cjstt1kn60003gfmndtql1f9s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/29/第七次比赛/" data-id="cjstt518m0003hmmnpw9qaa2j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CF/">CF</a></li></ul>
@@ -183,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/24/第六次比赛/" data-id="cjstt1knf0008gfmnxl490clu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/24/第六次比赛/" data-id="cjstt518x0008hmmnvdyh6q6a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CF/">CF</a></li></ul>
@@ -233,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/22/第五次比赛/" data-id="cjstt1kne0007gfmn81hup0x5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/22/第五次比赛/" data-id="cjstt518w0007hmmn050vewpy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -273,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/20/多校Day1/" data-id="cjstt1kn50002gfmnallky5h1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/20/多校Day1/" data-id="cjstt518l0002hmmnuiyj48l6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -315,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/13/第四次比赛/" data-id="cjstt1kni000cgfmnrtgppm11" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/13/第四次比赛/" data-id="cjstt518z000chmmnho9jgequ" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjstt1knh000agfmnifweuuto" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/01/表达式计算/" data-id="cjstt518y000ahmmnt37xpej0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈的应用/">栈的应用</a></li></ul>
@@ -424,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjstt1kn70004gfmne34p5l6e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/28/第三次比赛/" data-id="cjstt518v0006hmmny1jpvnfs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -479,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjstt1kne0006gfmnclfe6kgw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/24/第二次比赛/" data-id="cjstt518n0004hmmn0aqoj9ph" class="article-share-link">Share</a>
       
       
     </footer>
@@ -524,7 +524,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjstt1kn30001gfmncko6zv7g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/22/hello/" data-id="cjstt518f0000hmmnq52aqgs7" class="article-share-link">Share</a>
       
       
     </footer>

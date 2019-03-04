@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="姜妍二胖">
 <meta property="og:description" content="[34. Find First and Last Position of Element in Sorted Array]二分最小的$l$,使得$nums[l] \ge target$.二分最大的$r$,使得$nums[r] \le target$. [35. Search Insert Position] :二分最小的$l$,使得$nums[l] \ge target$.注意一个细节:如果$l$">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-04T03:48:28.000Z">
+<meta property="og:updated_time" content="2019-03-04T03:51:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode泛做合集">
 <meta name="twitter:description" content="[34. Find First and Last Position of Element in Sorted Array]二分最小的$l$,使得$nums[l] \ge target$.二分最大的$r$,使得$nums[r] \le target$. [35. Search Insert Position] :二分最小的$l$,使得$nums[l] \ge target$.注意一个细节:如果$l$">
@@ -93,12 +93,12 @@
 <p>[38. Count and Say]<br>递推模拟,将字符串分解成连续的若干段,统计每段对应的数字和个数$t$,其中$t$可能不止是个位数.</p>
 <p>[39. Combination Sum]<br>简单的Dfs</p>
 <p>[40. Combination Sum II]<br>同39,注意在解的出口加判重</p>
-<p>[41. First Missing Positive]<br>思维好题,有两种解法.<br>解法一:考虑没有额外空间限制的问题.引入辅助数组$A[]$,初始化全为$1$.在扫描数组的时候,将$nums[i]$放入$A[nums[i]-1]$下,最后扫描$A[]$,遇到第一个为$-1$的位置跳出即可.现在考虑原问题,将$num[]$和$A[]$合并,仍然扫描$nums[]$,将$nums[i]$和$nums[nums[i]-1]$交换(注意可能会一直交换下去).<br>解法二:同样考虑没有限制的问题.引入辅助数组$A[]$,初始化全为$1$.不妨设$nums[i]&gt;0$(否则将$le 0$的部分全部放到后面).扫描数组的时候,将$A[nums[i]-1]=-1$.最后扫描$A[]$,碰到第一个为$1$的位置跳出即可.现在考虑原问题,将$nums[]$和$A[]$合并，仍然扫描$nums[]$,当扫描到$nums[i]$时,令$nums[abs(nums[i])-1]$变为负数即可.最后只需要扫描$nums[]$,在第一个不是负数的地方跳出即可.</p>
+<p>[41. First Missing Positive]<br>思维好题,有两种解法.<br>解法一:考虑没有额外空间限制的问题.引入辅助数组$A$,初始化全为$1$.在扫描数组的时候,将$nums[i]$放入$A[nums[i]-1]$下,最后扫描$A$,遇到第一个为$-1$的位置跳出即可.现在考虑原问题,将$nums$和$A$合并,仍然扫描$nums$,将$nums[i]$和$nums[nums[i]-1]$交换(注意可能会一直交换下去).<br>解法二:同样考虑没有限制的问题.引入辅助数组$A$,初始化全为$1$.不妨设$nums[i]&gt;0$(否则将$le 0$的部分全部放到后面).扫描数组的时候,将$A[nums[i]-1]=-1$.最后扫描$A$,碰到第一个为$1$的位置跳出即可.现在考虑原问题,将$nums$和$A$合并,仍然扫描$nums$,当扫描到$nums[i]$时,令$nums[abs(nums[i])-1]$变为负数即可.最后只需要扫描$nums$,在第一个不是负数的地方跳出即可.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/leetcode泛做合集/" data-id="cjstt1kn00000gfmnpvnw0avo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/01/leetcode泛做合集/" data-id="cjstt518j0001hmmnr2m3bquq" class="article-share-link">Share</a>
       
       
     </footer>
